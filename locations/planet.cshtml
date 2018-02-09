@@ -1,0 +1,18 @@
+﻿@{
+Layout = "~/_layout.cshtml";
+
+var LocationNameShort = UrlData[0];
+var db = Database.Open("connSWTOR");
+var selectQueryString = "SELECT * FROM World.Locations WHERE LocationNameShort=@0";
+
+var rowCount =  db.Query(selectQueryString, LocationNameShort).Count();
+if ((rowCount == 0) || (UrlData.Count > 1))
+  {Response.Redirect(@Href("~/locations/planets"));}
+
+var Planet = db.QuerySingle(selectQueryString, LocationNameShort);
+
+}
+<div style="text-align:  left">
+  <span style="color:  #EEEE00; font-size:  28px; font-weight:  bold">@Planet.LocationName</span>&nbsp;<span class="Aurebesh" style="color: #DDBB00; margin: 0 12px; font-size:  14px">@Planet.LocationName</span>
+  <hr />
+</div>

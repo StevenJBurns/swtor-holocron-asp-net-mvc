@@ -1,0 +1,32 @@
+﻿@{
+    Layout = "~/_layout.cshtml";
+
+    var dbase = Database.Open("TheGreatHolocron");
+    var planetselect = "SELECT ID, LocationName, LocationNameShort, FactionAccessibility FROM Planets WHERE LocationType=1 ORDER BY ID";
+    var CodexAll = dbase.Query(planetselect);
+}
+
+<p>The known galaxy is more than 100,000 light-years in diameter and consists of billions of star systems. Among these star systems, current estimates suggest there are more than one million inhabited worlds—many of them still unknown. At the current time, several planetary systems have been singled out for further study. It is on these worlds that analysts believe the future of the galaxy will be decided. Profiles of these planetary bodies are available here.</p>
+<div class="table">
+  <ul class="ulPlanets ulRepublicPlanets">
+    @foreach (var row in dbase.Query(planetselect))
+    {
+        if (row.FactionAccessibility == "Republic")
+        {<li><a class="RepublicPlanet" href="@Href("~/locations/planet", row.LocationNameShort)">@row.LocationName</a></li>}
+      }
+  </ul>
+  <ul class="ulPlanets ulOpenPlanets">
+    @foreach(var row in dbase.Query(planetselect))
+      {
+      if (row.FactionAccessibility == "Any")
+        {<li><a class="OpenPlanet" href="@Href("~/locations/planet", row.LocationNameShort)">@row.LocationName</a></li>}
+      }
+  </ul>
+  <ul class="ulPlanets ulEmpirePlanets">
+    @foreach(var row in dbase.Query(planetselect))
+      {
+      if (row.FactionAccessibility == "Empire")
+        {<li><a class="EmpirePlanet" href="@Href("~/locations/planet", row.LocationNameShort)">@row.LocationName</a></li>}
+      }
+  </ul>
+</div>

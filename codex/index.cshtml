@@ -1,0 +1,13 @@
+﻿@{
+Layout = "../_layout.cshtml";
+
+var dbase = Database.Open("connSWTOR");
+var CodexQuery = "SELECT * FROM Codex.Base";
+var CodexAll = dbase.Query(CodexQuery);
+}
+
+<h2><u>Codex</u></h2>
+<ul style="list-style: none">
+@foreach(var row in CodexAll)
+  {<li><a href="@Href("~/codex/single", row.CodexNameShort)">@row.CodexName</a></li>}
+</ul>

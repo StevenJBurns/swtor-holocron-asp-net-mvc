@@ -1,0 +1,46 @@
+﻿@font-face {font-family: 'OrbitronMedium'; font-weight: normal; font-style: normal; src: url('../Fonts/orbitron-medium-webfont.eot');
+                          src: url('../Fonts/orbitron-medium-webfont.eot?#iefix') format('embedded-opentype'), url('../Fonts/orbitron-medium-webfont.woff') format('woff'), url('../Fonts/orbitron-medium-webfont.ttf') format('truetype'),url('../Fonts/orbitron-medium-webfont.svg#OrbitronMedium') format('svg')}
+
+@font-face {font-family: 'Aurebesh'; font-weight: normal; font-style: normal; src: url('../fonts/aurebesh-webfont.eot');
+                          src: url('../fonts/aurebesh-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/aurebesh-webfont.woff') format('woff'), url('../fonts/aurebesh-webfont.ttf') format('truetype'),url('../fonts/aurebesh-webfont.svg#OrbitronMedium') format('svg')}
+
+* {-webkit-touch-callout: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none}
+
+html {margin: 0; padding: 0; height: 100%; background: #000000; background-repeat: no-repeat}
+body {color: #FFFF00; font-family: Calibri, Verdana; text-align: center;  cursor: default}
+
+.Aurebesh {font-family: Aurebesh}
+
+div.table {display: table; margin: auto}
+div.cell {display: table-cell}
+
+div#Layout {margin: auto; min-width: 800px; max-width: 1024px}
+div#Content {padding: 8px; background: #222222; border-radius: 8px; min-height: 600px}
+
+h1, h2, h3, h4, h5, h6 {margin: 2px 8px; color: #FFBB00; font-family: Calibri; text-align: left}
+
+hr {height: 2px; border: none; margin: 0 0px; color: #FF8800;
+background: -o-linear-gradient(left, rgba(255,191,0,1) 50%, #222222 90%);
+background: -ms-linear-gradient(left, rgba(255,191,0,1) 50%, #222222 90%);
+background: -moz-linear-gradient(left, rgba(255,191,0,1) 50%, #222222 90%);
+background: -webkit-linear-gradient(left, rgba(255,191,0,1) 50%, #222222 90%);
+filter: progid:DXImageTransform.Microsoft.gradient(GradientType=1, startColorstr='#FFCC00', endColorstr='#222222');
+}
+
+.ulPlanets {margin: 8px; padding: 4px; height: 192px; max-width: 256px; min-width: 256px; border-radius: 4px; display: inline-block; background: #3C3C3C;	vertical-align:  middle; list-style: none; box-shadow: 0 0 24px #000000}
+
+p {margin: 8px 0; padding: 0 8px; color: #FDFD99; text-align: justify}
+	
+ul {list-style: none;}
+
+a {color: #FFD800; text-decoration: none;}
+
+a.OpenPlanet {color: #FE7EFB	}
+a.RepublicPlanet {color: #7EFBFE}
+a.EmpirePlanet {color: #FE5551}
+
+a:hover {color: #FFFFFF; text-decoration: none}
+
+li:hover {color: #FFFFFF}
+
+footer {display: none; height: 48px; width: 100%; margin-top: -64px; text-align: center}

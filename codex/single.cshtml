@@ -1,0 +1,17 @@
+﻿@{
+Layout = "~/_layout.cshtml";
+
+var CodexNameShort = UrlData[0];
+var db = Database.Open("connSWTOR");
+var selectQueryString = "SELECT * FROM Codex.Base WHERE CodexNameShort=@0";
+var rowCount =  db.Query(selectQueryString, CodexNameShort).Count();
+
+if ((rowCount == 0) || (UrlData.Count > 1))
+  {Response.Redirect(@Href("~/codex"));}
+
+var Codex = db.QuerySingle(selectQueryString, CodexNameShort);
+}
+
+<h1 style="text-align: left">@Codex.CodexName</h1>
+<hr />
+<p>@Codex.CodexText</p>
